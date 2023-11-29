@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site da Saúde</title>
+    <link rel="stylesheet" href="Main.css">
+    
+</head>
+
+<body>
+    <header>
+        <h1>Bem-vindo ao Site de Saúde</h1>
+        <nav>
+            <ul>
+                <li><a href="#postos">Postos</a></li>
+                <li><a href="#vacinas">Vacinas</a></li>
+                <li><a href="#grupos">Grupos Prioritários</a></li>
+                <li><a href="#datasus">DataSUS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="postos">
+            <h2>Postos de Saúde</h2>
+            <p>Texto sobre os postos de atendimento na área da saúde.</p>
+        </section>
+
+        <section id="vacinas">
+            <h2>Vacinas</h2>
+            <article>
+                <h3>Tipo de Vacina 1</h3>
+                <p>Informações sobre a vacina 1.</p>
+            </article>
+            <article>
+                <h3>Tipo de Vacina 2</h3>
+                <p>Informações sobre a vacina 2.</p>
+            </article>
+        </section>
+
+        <section id="grupos">
+            <h2>Grupos Prioritários</h2>
+            <p>Informações sobre os grupos prioritários para vacinação.</p>
+        </section>
+
+        <section id="datasus">
+            <h2>DataSUS</h2>
+            <p>Informações sobre o DataSUS e seu papel na saúde pública.</p>
+        </section>
+
+
+    </main>
+
+    <form action="/submit" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="Número com (DDD)">Número com (DDD):</label>
+        <input type="number" id="number" name="Número" required>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Saúde</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('nav ul li a');
+
+            for (const link of links) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 50,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
